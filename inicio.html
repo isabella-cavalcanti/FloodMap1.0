@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloodMap | Monitoramento Inteligente de Enchentes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav glass">
+    <div class="nav-inner">
+      <a href="inicio.html" class="brand">
+        <img src="img/logo.svg" alt="FloodMap" class="brand-icon" />
+        <div class="brand-text">
+          <div class="brand-name"><span>Flood</span><span class="accent">Map</span></div>
+          <div class="brand-sub">Tecnologia para prevenção de enchentes</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="#missao">Missão</a>
+        <a href="#servicos">Solução</a>
+        <a href="nosso-app.html">Nosso App</a>
+        <a href="colaboradoras.html">Colaboradoras</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero reveal" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">
+            <span class="kicker-dot"></span>
+            Solução inteligente para monitoramento e alertas de enchentes
+          </div>
+
+          <h1>Somos uma empresa que transforma <span class="text-accent">prevenção</span> em ação.</h1>
+
+          <p class="lead">
+            A FloodMap desenvolve uma plataforma moderna de monitoramento em tempo real para enchentes,
+            com alertas personalizados, rotas seguras, sensores inteligentes e apoio direto para prefeituras,
+            Defesa Civil e comunidades em áreas de risco.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Quero contratar</a>
+            <a class="btn btn-secondary" href="sobre.html">Conhecer a empresa</a>
+            <a class="btn btn-outline" href="nosso-app.html">Ver o aplicativo</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>Tempo real</strong>
+              <span>Monitoramento contínuo e alertas rápidos</span>
+            </div>
+            <div class="stat">
+              <strong>Prevenção</strong>
+              <span>Menos danos materiais e mais segurança</span>
+            </div>
+            <div class="stat">
+              <strong>Integração</strong>
+              <span>Conexão com órgãos públicos e parceiros</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="dashboard">
+            <div class="dash-top">
+              <div>
+                <div class="small-label">Status da plataforma</div>
+                <h2 style="margin:0">Monitoramento ativo</h2>
+              </div>
+              <div class="pill">Atualizado agora</div>
+            </div>
+
+            <div class="map-box">
+              <div class="map-grid"></div>
+              <div class="alert-badge">
+                <h3>Alertas inteligentes de enchentes</h3>
+                <p>Geolocalização, evacuação segura e resposta rápida</p>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-grid">
+                <div class="metric">
+                  <span>Nível de risco</span>
+                  <strong>Alerta preventivo</strong>
+                </div>
+                <div class="metric">
+                  <span>Comunicação</span>
+                  <strong>App + SMS + WhatsApp</strong>
+                </div>
+                <div class="metric">
+                  <span>Usuários</span>
+                  <strong>Moradores e órgãos públicos</strong>
+                </div>
+                <div class="metric">
+                  <span>Atendimento</span>
+                  <strong>Suporte especializado</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SOBRE (resumo) ── -->
+    <section id="sobre" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Sobre a empresa</h2>
+            <p>Uma solução criada para monitorar enchentes, reduzir riscos e apoiar decisões rápidas em situações emergenciais.</p>
+          </div>
+          <a class="btn btn-outline" href="sobre.html">Ver página completa →</a>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🏢</div>
+            <div class="badge">Quem somos</div>
+            <h3>Inovação com propósito</h3>
+            <p>
+              Somos uma empresa de tecnologia focada em segurança urbana e prevenção de desastres.
+              Criamos uma plataforma que conecta dados, sensores e alertas para proteger pessoas e cidades.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📡</div>
+            <div class="badge">O que fazemos</div>
+            <h3>Monitoramento inteligente</h3>
+            <p>
+              Fazemos a análise contínua do nível da água, enviamos notificações personalizadas e ajudamos na identificação de rotas seguras em tempo real.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <div class="badge">Para quem é</div>
+            <h3>Setor público e privado</h3>
+            <p>
+              Atendemos prefeituras, Defesa Civil, empresas, condomínios e comunidades que precisam de mais segurança em regiões de risco.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MISSÃO ── -->
+    <section id="missao" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Missão, visão e valores</h2>
+            <p>A identidade que guia cada decisão e produto que desenvolvemos.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="missao">Missão</button>
+            <button class="tab-btn" data-tab="visao">Visão</button>
+            <button class="tab-btn" data-tab="valores">Valores</button>
+          </div>
+
+          <div class="tab-panel active" id="missao-panel">
+            <div class="split">
+              <div>
+                <h3>Missão</h3>
+                <p>
+                  Desenvolver soluções tecnológicas para monitorar enchentes em tempo real, emitir alertas inteligentes e contribuir para a proteção de vidas e patrimônios.
+                </p>
+              </div>
+              <div>
+                <h3>Impacto</h3>
+                <p>
+                  Unimos tecnologia, prevenção e comunicação rápida para ajudar comunidades e órgãos públicos a agir antes que o problema se torne maior.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="visao-panel">
+            <div class="split">
+              <div>
+                <h3>Visão</h3>
+                <p>
+                  Ser referência em monitoramento de enchentes e gestão de riscos urbanos, tornando as cidades mais seguras e preparadas para eventos climáticos extremos.
+                </p>
+              </div>
+              <div>
+                <h3>Futuro</h3>
+                <p>
+                  Expandir a solução para mais cidades, integrando dados, automação e inteligência para melhorar a resposta emergencial em larga escala.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="valores-panel">
+            <div class="split">
+              <div>
+                <h3>Valores</h3>
+                <ul class="list">
+                  <li>Compromisso com a segurança das pessoas</li>
+                  <li>Inovação e melhoria contínua</li>
+                  <li>Responsabilidade social e ambiental</li>
+                  <li>Transparência e confiabilidade</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Cultura</h3>
+                <p>
+                  Trabalhamos com foco em impacto real, colaboração com parceiros e soluções acessíveis para quem mais precisa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECURSOS / SOLUÇÃO ── -->
+    <section id="servicos" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Recursos da solução</h2>
+            <p>Tecnologia de ponta para monitoramento e prevenção de enchentes em tempo real.</p>
+          </div>
+        </div>
+
+        <!-- Sensor hardware image -->
+        <div class="card resources-feature">
+          <div class="resources-feature-text">
+            <div class="badge">Infraestrutura física</div>
+            <h3>Sensores inteligentes instalados nas ruas</h3>
+            <p>
+              Nossos dispositivos IoT são instalados em bueiros e pontos estratégicos para coletar dados em tempo real sobre o nível da água, temperatura e acúmulo de resíduos.
+            </p>
+            <ul class="list" style="margin-top:12px">
+              <li>Sensor ultrassônico de nível</li>
+              <li>Módulo de conectividade LoRaWAN</li>
+              <li>Bateria de longa duração</li>
+              <li>Transmissão contínua de dados</li>
+            </ul>
+          </div>
+          <div class="resources-feature-img">
+            <img src="img/sensores.jpeg?v=2" alt="Sensores IoT FloodMap instalados em bueiro urbano" />
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🔔</div>
+            <h3>Alertas personalizados</h3>
+            <p>Mensagens de emergência conforme a localização do usuário, com envio rápido por app, SMS e WhatsApp.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🗺️</div>
+            <h3>Rotas seguras</h3>
+            <p>Indicação de caminhos de evacuação em tempo real para orientar moradores e equipes de apoio.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>Integração pública</h3>
+            <p>Conexão com Defesa Civil, prefeituras e sistemas meteorológicos para tomada de decisão mais eficiente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NOSSO APP (preview) ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Nosso aplicativo</h2>
+            <p>Um app completo para monitorar, alertar e proteger em tempo real.</p>
+          </div>
+          <a class="btn btn-outline" href="nosso-app.html">Ver todas as telas →</a>
+        </div>
+
+        <div class="app-preview-grid">
+          <div class="app-phones">
+            <div class="mini-phone">
+              <img src="img/app-home.jpeg" alt="Tela Home do FloodMap" />
+            </div>
+            <div class="mini-phone elevated">
+              <img src="img/app-mapa.jpeg" alt="Tela de Mapa do FloodMap" />
+            </div>
+            <div class="mini-phone">
+              <img src="img/app-alertas.jpeg" alt="Tela de Alertas do FloodMap" />
+            </div>
+          </div>
+
+          <div class="app-features-list">
+            <div class="app-feature-item">
+              <div class="app-feature-icon">📍</div>
+              <div>
+                <h4>Mapa ao vivo</h4>
+                <p>Visualize áreas alagadas, bueiros críticos e rotas seguras em tempo real.</p>
+              </div>
+            </div>
+            <div class="app-feature-item">
+              <div class="app-feature-icon">🚨</div>
+              <div>
+                <h4>Alertas instantâneos</h4>
+                <p>Receba notificações de risco com antecedência para tomar decisões rápidas.</p>
+              </div>
+            </div>
+            <div class="app-feature-item">
+              <div class="app-feature-icon">📊</div>
+              <div>
+                <h4>Dados & análises</h4>
+                <p>Gráficos, histórico e previsões inteligentes com IA para gestores.</p>
+              </div>
+            </div>
+            <div class="app-feature-item">
+              <div class="app-feature-icon">🛡️</div>
+              <div>
+                <h4>Rotas seguras</h4>
+                <p>Calcule automaticamente o melhor caminho evitando áreas de risco.</p>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="nosso-app.html" style="justify-self:start;margin-top:4px">
+              Conhecer o aplicativo →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTATO ── -->
+    <section id="contato" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Contato</h2>
+            <p>Fale com a nossa equipe para contratar, pedir uma apresentação ou solicitar orçamento.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Fale com a FloodMap</h3>
+            <form id="contactForm">
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Seu nome" required />
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seuemail@exemplo.com" required />
+              </div>
+              <div class="field">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Escreva aqui seu interesse em contratar a empresa..." required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+            </form>
+          </div>
+
+          <div class="contact-box">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div class="contact-item-body">
+                <strong>Contato comercial</strong>
+                <span>comercial@floodmap.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-body">
+                <strong>Telefone</strong>
+                <span>(00) 00000-0000</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div class="contact-item-body">
+                <strong>Atendimento</strong>
+                <span>Segunda a sexta, 8h às 18h</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">⚙️</div>
+              <div class="contact-item-body">
+                <strong>Serviços</strong>
+                <span>Monitoramento, alertas, integração com órgãos públicos e consultoria</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🔗</div>
+              <div class="contact-item-body">
+                <strong>Atalhos</strong>
+                <span>
+                  <a href="sobre.html" style="color:var(--primary)">Sobre a empresa</a> ·
+                  <a href="nosso-app.html" style="color:var(--primary)">Nosso app</a> ·
+                  <a href="colaboradoras.html" style="color:var(--primary)">Colaboradoras</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="floating whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener" title="WhatsApp">✆</a>
+  <a class="floating" href="#inicio" title="Voltar ao topo">↑</a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="inicio.html" class="brand" style="gap:8px">
+          <img src="img/logo.svg" alt="FloodMap" style="height:32px;width:auto" />
+          <span style="font-weight:800;font-size:1rem">Flood<span style="color:var(--primary)">Map</span></span>
+        </a>
+        <div class="footer-links">
+          <a href="sobre.html">Sobre</a>
+          <a href="#servicos">Solução</a>
+          <a href="nosso-app.html">Nosso App</a>
+          <a href="colaboradoras.html">Colaboradoras</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <p style="margin-top:20px;font-size:0.88rem">© 2025 FloodMap — Tecnologia para prevenir enchentes e proteger vidas.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloodMap | Configurar Imagens</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06111f; --card: rgba(255,255,255,0.07); --primary: #4cc9f0;
+      --secondary: #4361ee; --muted: #b9c8da; --border: 1px solid rgba(255,255,255,0.12);
+      --accent: #00d4a6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #06111f, #0b2037);
+      color: #edf5ff;
+      min-height: 100vh;
+      padding: 32px 16px 80px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.03em; }
+    .header h1 span { color: var(--primary); }
+    .header p { color: var(--muted); margin-top: 10px; font-size: 1.05rem; }
+
+    .step {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(0,212,166,0.08); border: 1px solid rgba(0,212,166,0.2);
+      border-radius: 16px; padding: 18px 22px; margin-bottom: 32px;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--accent); color: #06111f;
+      font-weight: 900; font-size: 0.9rem;
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .step p { color: var(--muted); font-size: 0.93rem; line-height: 1.6; }
+    .step strong { color: white; }
+
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--primary);
+      margin-bottom: 12px; margin-top: 36px;
+    }
+
+    .grid { display: grid; gap: 14px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .slot {
+      border: 2px dashed rgba(255,255,255,0.18);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 16px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 10px;
+    }
+    .slot:hover, .slot.drag-over {
+      border-color: var(--primary);
+      background: rgba(76,201,240,0.08);
+    }
+    .slot.done { border-color: var(--accent); border-style: solid; }
+    .slot input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .slot-preview {
+      width: 100%; aspect-ratio: 9/16;
+      border-radius: 10px; overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      display: grid; place-items: center;
+      color: var(--muted); font-size: 2rem;
+    }
+    .slot-preview.wide { aspect-ratio: 16/9; }
+    .slot-preview img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+    .slot-name { font-weight: 700; font-size: 0.88rem; }
+    .slot-file { font-size: 0.75rem; color: var(--muted); font-family: monospace; }
+    .slot-check { color: var(--accent); font-size: 0.8rem; font-weight: 700; }
+
+    /* Logo slot is landscape */
+    .slot-logo .slot-preview { aspect-ratio: 3/1; font-size: 2.5rem; }
+
+    .save-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(6,17,31,0.95); backdrop-filter: blur(18px);
+      border-top: var(--border); padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .save-status { color: var(--muted); font-size: 0.92rem; }
+    .save-status strong { color: white; }
+
+    .btn {
+      padding: 14px 28px; border-radius: 14px; border: 0;
+      font: 700 0.95rem "Inter", sans-serif; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; box-shadow: 0 12px 28px rgba(67,97,238,0.3);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08); color: white;
+      border: var(--border);
+    }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    .success-msg {
+      display: none;
+      background: rgba(0,212,166,0.1); border: 1px solid rgba(0,212,166,0.3);
+      border-radius: 14px; padding: 16px 20px; margin-top: 24px;
+      color: var(--accent); font-weight: 600; text-align: center; font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 700px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .grid-4, .grid-3 { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Configurar Imagens do <span>FloodMap</span></h1>
+    <p>Arraste ou clique em cada slot para adicionar as imagens. Depois clique em "Salvar na pasta".</p>
+  </div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <p><strong>Selecione as imagens</strong> — clique em cada quadro ou arraste a foto para o slot correto. Uma pré-visualização aparecerá assim que você selecionar.</p>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <p>Clique em <strong>"Salvar na pasta do projeto"</strong> → o navegador vai pedir para você escolher a pasta <strong>empreendedorismo</strong>. Selecione ela e todas as imagens serão salvas automaticamente com os nomes certos.</p>
+  </div>
+
+  <!-- LOGO -->
+  <div class="section-label">Logo</div>
+  <div>
+    <div class="slot slot-logo" id="slot-logo" data-filename="logo-original.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview wide">🖼️</div>
+      <div class="slot-name">Logo do FloodMap</div>
+      <div class="slot-file">logo-original.png</div>
+    </div>
+  </div>
+
+  <!-- SENSOR -->
+  <div class="section-label">Imagem de Sensores (Recursos da Solução)</div>
+  <div>
+    <div class="slot" id="slot-sensores" data-filename="sensores.png" style="max-width:480px">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview wide">📡</div>
+      <div class="slot-name">Diagrama de Sensores IoT</div>
+      <div class="slot-file">sensores.png</div>
+    </div>
+  </div>
+
+  <!-- APP SCREENSHOTS -->
+  <div class="section-label">Telas do Aplicativo (Nosso App)</div>
+  <div class="grid grid-4" id="app-grid">
+
+    <div class="slot" data-filename="app-splash.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">📱</div>
+      <div class="slot-name">Carregamento</div>
+      <div class="slot-file">app-splash.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-login.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🔐</div>
+      <div class="slot-name">Login</div>
+      <div class="slot-file">app-login.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-home.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🏠</div>
+      <div class="slot-name">Home</div>
+      <div class="slot-file">app-home.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-mapa.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🗺️</div>
+      <div class="slot-name">Mapa</div>
+      <div class="slot-file">app-mapa.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-alertas.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🚨</div>
+      <div class="slot-name">Alertas</div>
+      <div class="slot-file">app-alertas.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-rotas.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🛡️</div>
+      <div class="slot-name">Rotas Seguras</div>
+      <div class="slot-file">app-rotas.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-dados.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">📊</div>
+      <div class="slot-name">Dados & Análises</div>
+      <div class="slot-file">app-dados.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-sensor.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">📡</div>
+      <div class="slot-name">Sensor B-24</div>
+      <div class="slot-file">app-sensor.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-planos.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">💳</div>
+      <div class="slot-name">Planos</div>
+      <div class="slot-file">app-planos.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-profissional.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">💼</div>
+      <div class="slot-name">Plano Profissional</div>
+      <div class="slot-file">app-profissional.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-corporativo.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">🏛️</div>
+      <div class="slot-name">Plano Corporativo</div>
+      <div class="slot-file">app-corporativo.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-ajuda.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">❓</div>
+      <div class="slot-name">Central de Ajuda</div>
+      <div class="slot-file">app-ajuda.png</div>
+    </div>
+
+    <div class="slot" data-filename="app-config.png">
+      <input type="file" accept="image/*" />
+      <div class="slot-preview">⚙️</div>
+      <div class="slot-name">Configurações</div>
+      <div class="slot-file">app-config.png</div>
+    </div>
+
+  </div>
+
+  <div class="success-msg" id="successMsg">
+    ✅ Todas as imagens foram salvas na pasta do projeto! Abra o site normalmente.
+  </div>
+
+</div>
+
+<!-- SAVE BAR -->
+<div class="save-bar">
+  <div class="save-status">
+    <strong id="countDone">0</strong> de <strong id="countTotal">15</strong> imagens selecionadas
+  </div>
+  <div style="display:flex;gap:10px">
+    <button class="btn btn-secondary" id="btnPreview" onclick="window.open('inicio.html','_blank')">
+      Abrir site
+    </button>
+    <button class="btn btn-primary" id="btnSave" onclick="saveAll()">
+      💾 Salvar na pasta do projeto
+    </button>
+  </div>
+</div>
+
+<script>
+  const files = {};
+  let dirHandle = null;
+
+  const slots = document.querySelectorAll('.slot');
+  const countDone = document.getElementById('countDone');
+  const countTotal = document.getElementById('countTotal');
+  countTotal.textContent = slots.length;
+
+  slots.forEach(slot => {
+    const input = slot.querySelector('input[type="file"]');
+    const preview = slot.querySelector('.slot-preview');
+    const filename = slot.dataset.filename;
+
+    const handleFile = (file) => {
+      if (!file || !file.type.startsWith('image/')) return;
+      files[filename] = file;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.innerHTML = `<img src="${e.target.result}" alt="${filename}"/>`;
+        slot.classList.add('done');
+        countDone.textContent = Object.keys(files).length;
+      };
+      reader.readAsDataURL(file);
+    };
+
+    input.addEventListener('change', () => handleFile(input.files[0]));
+
+    slot.addEventListener('dragover', (e) => { e.preventDefault(); slot.classList.add('drag-over'); });
+    slot.addEventListener('dragleave', () => slot.classList.remove('drag-over'));
+    slot.addEventListener('drop', (e) => {
+      e.preventDefault();
+      slot.classList.remove('drag-over');
+      handleFile(e.dataTransfer.files[0]);
+    });
+  });
+
+  async function saveAll() {
+    if (Object.keys(files).length === 0) {
+      alert('Selecione pelo menos uma imagem primeiro!');
+      return;
+    }
+
+    // Use File System Access API
+    if (!window.showDirectoryPicker) {
+      fallbackDownload();
+      return;
+    }
+
+    try {
+      dirHandle = await window.showDirectoryPicker({
+        mode: 'readwrite',
+        startIn: 'downloads'
+      });
+
+      let saved = 0;
+      for (const [filename, file] of Object.entries(files)) {
+        const fileHandle = await dirHandle.getFileHandle(filename, { create: true });
+        const writable = await fileHandle.createWritable();
+        await writable.write(file);
+        await writable.close();
+        saved++;
+      }
+
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('successMsg').textContent =
+        `✅ ${saved} imagem(ns) salva(s) na pasta selecionada! Abra o site normalmente.`;
+
+      // Scroll to message
+      document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth' });
+
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        alert('Erro ao salvar. Tentando baixar individualmente...');
+        fallbackDownload();
+      }
+    }
+  }
+
+  function fallbackDownload() {
+    // Fallback: download each file with correct name
+    for (const [filename, file] of Object.entries(files)) {
+      const url = URL.createObjectURL(file);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    alert(`${Object.keys(files).length} arquivo(s) baixado(s)!\nMova-os para a pasta "empreendedorismo" no seu Mac.`);
+  }
+</script>
+</body>
+</html>

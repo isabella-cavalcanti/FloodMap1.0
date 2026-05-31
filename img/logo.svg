@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" fill="none">
+  <defs>
+    <linearGradient id="g" x1="40" y1="2" x2="40" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4CC9F0"/>
+      <stop offset="100%" stop-color="#4361EE"/>
+    </linearGradient>
+    <clipPath id="c">
+      <path d="M40 4C38 4 6 40 6 65C6 85 21 96 40 96C59 96 74 85 74 65C74 40 42 4 40 4Z"/>
+    </clipPath>
+  </defs>
+  <path d="M40 4C38 4 6 40 6 65C6 85 21 96 40 96C59 96 74 85 74 65C74 40 42 4 40 4Z"
+        stroke="url(#g)" stroke-width="4" fill="rgba(76,201,240,0.08)"/>
+  <g clip-path="url(#c)">
+    <path d="M40 18C34.5 18 29 23.5 29 30C29 38.5 40 48 40 48C40 48 51 38.5 51 30C51 23.5 45.5 18 40 18Z" fill="url(#g)"/>
+    <circle cx="40" cy="30" r="4" fill="white"/>
+    <rect x="9"  y="60" width="6" height="20" rx="1" fill="url(#g)"/>
+    <rect x="17" y="52" width="7" height="28" rx="1" fill="url(#g)"/>
+    <rect x="26" y="45" width="7" height="35" rx="1" fill="url(#g)"/>
+    <rect x="35" y="50" width="7" height="30" rx="1" fill="url(#g)"/>
+    <rect x="44" y="46" width="7" height="34" rx="1" fill="url(#g)"/>
+    <rect x="53" y="54" width="7" height="26" rx="1" fill="url(#g)"/>
+    <rect x="62" y="61" width="6" height="19" rx="1" fill="url(#g)"/>
+    <path d="M7 80Q20 75 33 80Q46 85 59 80Q72 75 75 80" stroke="#4CC9F0" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M7 87Q20 82 33 87Q46 92 59 87Q72 82 75 87" stroke="#4CC9F0" stroke-width="2"   stroke-linecap="round"/>
+    <path d="M8 93Q21 88 34 93Q47 98 60 93Q73 88 74 93" stroke="#4CC9F0" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>

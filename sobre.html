@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloodMap | Sobre a Empresa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav glass">
+    <div class="nav-inner">
+      <a href="inicio.html" class="brand">
+        <img src="img/logo.svg" alt="FloodMap" class="brand-icon" />
+        <div class="brand-text">
+          <div class="brand-name"><span>Flood</span><span class="accent">Map</span></div>
+          <div class="brand-sub">Tecnologia para prevenção de enchentes</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="inicio.html">Início</a>
+        <a href="sobre.html" class="active">Sobre</a>
+        <a href="inicio.html#missao">Missão</a>
+        <a href="inicio.html#servicos">Solução</a>
+        <a href="nosso-app.html">Nosso App</a>
+        <a href="colaboradoras.html">Colaboradoras</a>
+        <a href="inicio.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO DA PÁGINA ── -->
+    <section class="hero reveal" id="topo">
+      <div class="container">
+        <a href="inicio.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:0.9rem;margin-bottom:24px;transition:color 0.2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--muted)'">
+          ← Voltar para o início
+        </a>
+
+        <div class="kicker">
+          <span class="kicker-dot"></span>
+          Tecnologia para salvar vidas
+        </div>
+
+        <h1 style="max-width:18ch">Sobre a <span class="text-accent">FloodMap</span></h1>
+
+        <p class="lead" style="max-width:72ch">
+          Somos uma startup de tecnologia nascida da urgência de resolver um problema real: as enchentes que devastam comunidades brasileiras todos os anos.
+          Nossa plataforma conecta sensores físicos, dados em tempo real e inteligência artificial para transformar a forma como cidades e cidadãos enfrentam o risco das inundações.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="inicio.html#contato">Fale conosco</a>
+          <a class="btn btn-secondary" href="nosso-app.html">Ver nosso app</a>
+          <a class="btn btn-outline" href="colaboradoras.html">Conhecer a equipe</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DESTAQUES / PILARES ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Nosso propósito</h3>
+            <p>Reduzir o impacto das enchentes nas cidades brasileiras, protegendo vidas, patrimônios e infraestruturas por meio da tecnologia.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💡</div>
+            <h3>Nossa abordagem</h3>
+            <p>Combinamos hardware IoT, software inteligente e alertas em tempo real para criar um ecossistema completo de prevenção e resposta a inundações.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Nossos parceiros</h3>
+            <p>Trabalhamos com prefeituras, Defesa Civil, condomínios e empresas que atuam em regiões vulneráveis a riscos de alagamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MISSÃO, VISÃO E VALORES ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Missão, visão e valores</h2>
+            <p>A identidade que guia cada decisão que tomamos.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="missao">Missão</button>
+            <button class="tab-btn" data-tab="visao">Visão</button>
+            <button class="tab-btn" data-tab="valores">Valores</button>
+          </div>
+
+          <div class="tab-panel active" id="missao-panel">
+            <div class="split">
+              <div>
+                <h3>Nossa missão</h3>
+                <p>
+                  Desenvolver soluções tecnológicas para monitorar enchentes em tempo real, emitir alertas inteligentes e contribuir ativamente para a proteção de vidas e do patrimônio público e privado.
+                </p>
+                <p>
+                  Acreditamos que a tecnologia deve estar a serviço da segurança de todas as pessoas, independentemente da região ou do contexto social.
+                </p>
+              </div>
+              <div>
+                <h3>Por que importa</h3>
+                <p>
+                  O Brasil perde bilhões de reais e centenas de vidas por ano em eventos de enchentes que poderiam ter sido mitigados com sistemas de alerta precoce eficientes.
+                </p>
+                <p>
+                  A FloodMap existe para mudar essa realidade, unindo tecnologia, prevenção e comunicação rápida em uma única plataforma integrada.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="visao-panel">
+            <div class="split">
+              <div>
+                <h3>Nossa visão</h3>
+                <p>
+                  Ser referência nacional e internacional em monitoramento de enchentes e gestão de riscos urbanos, tornando as cidades mais seguras, inteligentes e preparadas para os desafios climáticos do futuro.
+                </p>
+              </div>
+              <div>
+                <h3>Onde queremos chegar</h3>
+                <p>
+                  Expandir a solução FloodMap para todas as cidades brasileiras em risco, integrando dados meteorológicos, automação e inteligência artificial para elevar a qualidade da resposta emergencial em larga escala.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="valores-panel">
+            <div class="split">
+              <div>
+                <h3>O que nos guia</h3>
+                <ul class="list">
+                  <li>Compromisso com a segurança das pessoas acima de tudo</li>
+                  <li>Inovação constante e melhoria contínua dos produtos</li>
+                  <li>Responsabilidade social e ambiental em todas as ações</li>
+                  <li>Transparência e confiabilidade nos dados e alertas</li>
+                  <li>Colaboração com comunidades e órgãos públicos</li>
+                  <li>Acessibilidade da tecnologia para quem mais precisa</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Nossa cultura</h3>
+                <p>
+                  Acreditamos que times diversas e apaixonados pelo que fazem constroem soluções melhores. Na FloodMap, cada integrante é responsável por um pedaço do impacto que geramos na sociedade.
+                </p>
+                <p>
+                  Trabalhamos com agilidade, foco em resultados reais e sempre com o usuário final no centro das nossas decisões.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── POR QUE ESCOLHER A FLOODMAP ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Por que escolher a FloodMap?</h2>
+            <p>Diferenciais que fazem a nossa solução única no mercado.</p>
+          </div>
+        </div>
+
+        <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Alertas em segundos</h3>
+            <p>Assim que os sensores detectam risco, alertas são enviados automaticamente para moradores, gestores e órgãos de defesa civil, sem demora.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Inteligência preditiva</h3>
+            <p>Nosso sistema usa IA para cruzar dados históricos, pluviométricos e dos sensores para prever enchentes com até 72h de antecedência.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔌</div>
+            <h3>Integração total</h3>
+            <p>APIs abertas e webhooks permitem integrar o FloodMap com sistemas existentes de prefeituras, CRMs, ERPs e plataformas de gestão urbana.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Aplicativo completo</h3>
+            <p>Do cidadão ao gestor, todos têm acesso a uma interface clara e intuitiva com mapa ao vivo, alertas, rotas seguras e análise de dados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HIGHLIGHT ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="card sobre-highlight">
+          <h3>Feita para quem importa</h3>
+          <p style="color:var(--muted);line-height:1.75;max-width:80ch">
+            A FloodMap foi criada por pessoas que entendem o problema das enchentes de perto. Nossa equipe combina experiência em tecnologia, urbanismo e gestão de emergências para desenvolver uma solução que realmente funciona — não apenas no papel, mas nas ruas, nos bueiros e nos celulares de quem precisa de proteção.
+          </p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px">
+            <a class="btn btn-primary" href="colaboradoras.html">Conheça nossa equipe</a>
+            <a class="btn btn-secondary" href="inicio.html#contato">Entre em contato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="floating whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener" title="WhatsApp">✆</a>
+  <a class="floating" href="#topo" title="Voltar ao topo">↑</a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="inicio.html" class="brand" style="gap:8px">
+          <img src="img/logo.svg" alt="FloodMap" style="height:32px;width:auto" />
+          <span style="font-weight:800;font-size:1rem">Flood<span style="color:var(--primary)">Map</span></span>
+        </a>
+        <div class="footer-links">
+          <a href="inicio.html">Início</a>
+          <a href="inicio.html#servicos">Solução</a>
+          <a href="nosso-app.html">Nosso App</a>
+          <a href="colaboradoras.html">Colaboradoras</a>
+          <a href="inicio.html#contato">Contato</a>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <p style="margin-top:20px;font-size:0.88rem">© 2025 FloodMap — Tecnologia para prevenir enchentes e proteger vidas.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

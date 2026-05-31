@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloodMap | Nosso Aplicativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav glass">
+    <div class="nav-inner">
+      <a href="inicio.html" class="brand">
+        <img src="img/logo.svg" alt="FloodMap" class="brand-icon" />
+        <div class="brand-text">
+          <div class="brand-name"><span>Flood</span><span class="accent">Map</span></div>
+          <div class="brand-sub">Tecnologia para prevenção de enchentes</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="inicio.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="inicio.html#missao">Missão</a>
+        <a href="inicio.html#servicos">Solução</a>
+        <a href="nosso-app.html" class="active">Nosso App</a>
+        <a href="colaboradoras.html">Colaboradoras</a>
+        <a href="inicio.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero reveal" id="topo">
+      <div class="container">
+        <a href="inicio.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:0.9rem;margin-bottom:24px;transition:color 0.2s"
+           onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--muted)'">
+          ← Voltar para o início
+        </a>
+
+        <div class="kicker">
+          <span class="kicker-dot"></span>
+          Disponível para iOS e Android
+        </div>
+
+        <h1>Conheça o <span class="text-accent">FloodMap App</span></h1>
+
+        <p class="lead" style="max-width:70ch">
+          Um aplicativo completo para monitorar enchentes em tempo real, receber alertas inteligentes,
+          visualizar rotas seguras e acompanhar dados detalhados de sensores e áreas de risco.
+          Do cidadão ao gestor municipal — todos têm uma experiência feita para eles.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="inicio.html#contato">Quero contratar</a>
+          <a class="btn btn-secondary" href="#galeria">Ver todas as telas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FUNCIONALIDADES ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>O que o app oferece</h2>
+            <p>Tudo o que você precisa para monitorar, prevenir e agir contra enchentes.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🗺️</div>
+            <h3>Mapa ao vivo</h3>
+            <p>Veja em tempo real as áreas alagadas, bueiros monitorados, pontos de risco e rotas seguras disponíveis na sua cidade.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🚨</div>
+            <h3>Alertas inteligentes</h3>
+            <p>Notificações automáticas de enchente detectada, bueiro obstruído, nível da água subindo e chuva intensa com avisos personalizados por região.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Rotas seguras</h3>
+            <p>Calcule automaticamente o melhor caminho de evacuação, evitando áreas alagadas e vias bloqueadas, atualizado em tempo real.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Dados & análises</h3>
+            <p>Histórico de eventos, gráficos de nível de água, previsões de IA com até 72h de antecedência e relatórios completos para gestores.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📡</div>
+            <h3>Sensores IoT</h3>
+            <p>Acompanhe cada sensor instalado na cidade: nível da água, acúmulo de lixo, temperatura e status de conectividade em tempo real.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💼</div>
+            <h3>Planos flexíveis</h3>
+            <p>Do plano gratuito para cidadãos ao Corporativo para prefeituras, com monitoramento ilimitado, IA preditiva e suporte 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALERIA DE TELAS ── -->
+    <section class="reveal" id="galeria">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Todas as telas do aplicativo</h2>
+            <p>Explore a interface completa do FloodMap — do login às análises avançadas.</p>
+          </div>
+        </div>
+
+        <div class="app-gallery">
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-login.jpeg" alt="Login" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Login</h4>
+              <p>Acesso seguro à conta</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-home.jpeg" alt="Home" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Home</h4>
+              <p>Painel com status da região</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-mapa.jpeg" alt="Mapa" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Mapa</h4>
+              <p>Visualização em tempo real</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-alertas.jpeg" alt="Alertas" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Alertas</h4>
+              <p>Avisos em tempo real</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-rotas.jpeg" alt="Rotas Seguras" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Rotas Seguras</h4>
+              <p>Melhor caminho de evacuação</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-dados.jpeg" alt="Dados e Análises" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Dados & Análises</h4>
+              <p>Inteligência para decisões</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-sensor.jpeg" alt="Sensor B-24" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Sensor B-24</h4>
+              <p>Detalhe do bueiro inteligente</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-planos.jpeg" alt="Planos e Assinaturas" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Planos</h4>
+              <p>Escolha o plano ideal</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-profissional.jpeg" alt="Plano Profissional" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Plano Profissional</h4>
+              <p>Para equipes e gestores</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-corporativo.jpeg" alt="Plano Corporativo" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Plano Corporativo</h4>
+              <p>Para prefeituras e empresas</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-ajuda.jpeg" alt="Central de Ajuda" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Central de Ajuda</h4>
+              <p>Suporte e tutoriais</p>
+            </div>
+          </div>
+
+          <div class="app-screen-card">
+            <div class="phone-frame">
+              <img src="img/app-config.jpeg" alt="Configurações" loading="lazy" />
+            </div>
+            <div class="app-screen-info">
+              <h4>Configurações</h4>
+              <p>Personalização da experiência</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="reveal">
+      <div class="container">
+        <div class="card sobre-highlight" style="text-align:center">
+          <h2 style="margin-top:0">Pronto para proteger sua cidade?</h2>
+          <p style="color:var(--muted);max-width:60ch;margin:0 auto 24px">
+            Entre em contato com nossa equipe e descubra como o FloodMap pode transformar a segurança da sua região.
+          </p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+            <a class="btn btn-primary" href="inicio.html#contato">Falar com a equipe</a>
+            <a class="btn btn-secondary" href="sobre.html">Conhecer a empresa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="floating whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener" title="WhatsApp">✆</a>
+  <a class="floating" href="#topo" title="Voltar ao topo">↑</a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="inicio.html" class="brand" style="gap:8px">
+          <img src="img/logo.svg" alt="FloodMap" style="height:32px;width:auto" />
+          <span style="font-weight:800;font-size:1rem">Flood<span style="color:var(--primary)">Map</span></span>
+        </a>
+        <div class="footer-links">
+          <a href="inicio.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="inicio.html#servicos">Solução</a>
+          <a href="colaboradoras.html">Colaboradoras</a>
+          <a href="inicio.html#contato">Contato</a>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <p style="margin-top:20px;font-size:0.88rem">© 2025 FloodMap — Tecnologia para prevenir enchentes e proteger vidas.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
